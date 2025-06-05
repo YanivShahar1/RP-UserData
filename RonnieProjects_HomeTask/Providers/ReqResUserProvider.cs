@@ -26,9 +26,6 @@ namespace RonnieProjects_HomeTask.Providers
         public async Task<IEnumerable<User>> GetUsersDataAsync()
         {
             var response = await _httpClient.GetFromJsonAsync<ReqResResponse>(ApiUrl);
-            var rawResponse = await _httpClient.GetStringAsync(ApiUrl);
-            Console.WriteLine("-----ReqResUserProvider------");
-            Console.WriteLine(rawResponse);
 
             return response?.Data.Select(u => new User
             {
@@ -41,19 +38,19 @@ namespace RonnieProjects_HomeTask.Providers
 
         private class ReqResResponse
         {
-            public List<ReqResUser> Data { get; set; }
+            public List<ReqResUser> Data { get; set; } = new List<ReqResUser>();
         }
 
         private class ReqResUser
         {
             public int Id { get; set; }
-            public string Email { get; set; }
+            public string Email { get; set; } = String.Empty;
 
             [JsonPropertyName("first_name")]
-            public string FirstName { get; set; }
+            public string FirstName { get; set; } = String.Empty;
 
             [JsonPropertyName("last_name")]
-            public string LastName { get; set; }
+            public string LastName { get; set; } = String.Empty;
         }
     }
 }

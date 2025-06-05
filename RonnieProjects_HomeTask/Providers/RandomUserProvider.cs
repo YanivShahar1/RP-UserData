@@ -36,25 +36,20 @@ namespace RonnieProjects_HomeTask.Providers
 
         private class RandomUserResponse
         {
-            public List<RandomUser> Results { get; set; }
+            public List<RandomUser> Results { get; set; } = new List<RandomUser>();
         }
 
         private class RandomUser
         {
             public RandomUserName Name { get; set; }
-            public string Email { get; set; }
-            public RandomUserLogin Login { get; set; }
+            public string Email { get; set; } = String.Empty;
         }
 
         private class RandomUserName
         {
-            public string First { get; set; }
-            public string Last { get; set; }
+            public string First { get; set; } = String.Empty;
+            public string Last { get; set; } = String.Empty;
         }
 
-        private class RandomUserLogin
-        {
-            public string Uuid { get; set; }
-        }
     }
 }

@@ -32,7 +32,7 @@ namespace RonnieProjects_HomeTask
                 new RandomUserProvider(_httpClient),
                 new JsonPlaceholderUserProvider(_httpClient),
                 new DummyJsonUserProvider(_httpClient),
-                new ReqResUserProvider(_httpClient, configuration) // Later to do DI better
+                new ReqResUserProvider(_httpClient, configuration) // Later should implement DI better
             };
 
             _userService = new UserDataService(userProviders);
@@ -58,7 +58,7 @@ namespace RonnieProjects_HomeTask
             var filePath = Path.Combine(folderPath, fileName);
 
             await exporter.ExportAsync(users, filePath);
-            Console.WriteLine($"\n✅ Users exported successfully to:\n{filePath}");
+            Console.WriteLine($"\n✅Users exported successfully to:\n{filePath}");
         }
     }
 }
