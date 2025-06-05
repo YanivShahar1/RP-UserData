@@ -58,7 +58,7 @@ namespace RonnieProjects_HomeTask
             var filePath = Path.Combine(folderPath, fileName);
 
             await exporter.ExportAsync(users, filePath);
-            Console.WriteLine($"\n✅Users exported successfully to:\n{filePath}");
+            Console.WriteLine($"\nUsers exported successfully to:\n{filePath}");
         }
     }
 }
