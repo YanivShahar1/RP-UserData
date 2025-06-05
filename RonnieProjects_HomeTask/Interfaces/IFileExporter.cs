@@ -8,6 +8,6 @@ namespace RonnieProjects_HomeTask.Interfaces
 {
     public interface IFileExporter
     {
-        Task ExportAsync<T>(List<T> data, string filePath);
+        Task ExportAsync<T>(IEnumerable<T> data, string filePath);
     }
 }

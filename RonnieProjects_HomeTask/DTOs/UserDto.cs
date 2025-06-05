@@ -8,9 +8,8 @@ namespace RonnieProjects_HomeTask.DTOs
 {
     internal class UserDto
     {
-        public string FirstName { get; set; } = "";
-        public string LastName { get; set; } = "";
-        public string Email { get; set; } = "";
-        public string SourceId { get; set; } = "";
+        public string FirstName { get; set; } = String.Empty;
+        public string LastName { get; set; } = String.Empty;
+        public string Email { get; set; } = String.Empty;
     }
 }

@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace RonnieProjects_HomeTask.Interfaces
 {
-    internal interface IUserDataProvider
+    internal interface IUserDataService
     {
-        Task<IEnumerable<User>> GetUsersDataAsync();
+        Task<IEnumerable<User>> GetAllUsersAsync();
     }
 }
