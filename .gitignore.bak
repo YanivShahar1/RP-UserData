@@ -31,4 +31,5 @@ _ReSharper*/
 publish/
 
 
+# .gitignore
 appsettings.json

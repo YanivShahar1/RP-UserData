@@ -1,4 +1,5 @@
-﻿using RonnieProjects_HomeTask.Entities;
+﻿using Microsoft.Extensions.Configuration;
+using RonnieProjects_HomeTask.Entities;
 using RonnieProjects_HomeTask.Exporters;
 using RonnieProjects_HomeTask.Interfaces;
 using RonnieProjects_HomeTask.Providers;
@@ -19,14 +20,19 @@ namespace RonnieProjects_HomeTask
 
         public UserDataConsoleApp()
         {
+
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
+
             _httpClient = new HttpClient();
 
             var userProviders = new List<IUserDataProvider>
             {
                 new RandomUserProvider(_httpClient),
-                new JsonPlaceholderUserProvider(_httpClient)
-                //new DummyJsonUserProvider(_httpClient),
-                //new ReqresUserProvider(_httpClient)
+                new JsonPlaceholderUserProvider(_httpClient),
+                new DummyJsonUserProvider(_httpClient),
+                new ReqResUserProvider(_httpClient, configuration) // Later to do DI better
             };
 
             _userService = new UserDataService(userProviders);
